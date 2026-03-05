@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main, master]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   # ──────────────────────────────────────────────
@@ -135,12 +139,15 @@ jobs:
           if-no-files-found: ignore
 
   # ──────────────────────────────────────────────
-  # Job 4: Generate Allure Report 
+  # Job 4: Generate Allure Report & Deploy to GitHub Pages
   # ──────────────────────────────────────────────
   generate-allure-report:
     runs-on: ubuntu-latest
     needs: cypress-run
     if: always()
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -169,3 +176,15 @@ jobs:
           name: allure-report
           path: allure-report
           if-no-files-found: ignore
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: allure-report
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
