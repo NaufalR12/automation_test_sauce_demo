@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T03:23:52.508Z",
+    "end": "2026-03-04T03:23:52.973Z",
+    "duration": 465,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8ab5a305-125e-4268-baff-d8dc904535a3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c287107-074e-4993-8211-1757adfd82af",
+          "title": "Data Driven Testing - Checkout Product",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Berhasil checkout dengan data valid lengkap",
+              "fullTitle": "Data Driven Testing - Checkout Product TC01 - Berhasil checkout dengan data valid lengkap",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  lastName,\n  postalCode\n} = checkoutData.validCheckout;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form\ncheckoutPage.fillCheckoutForm(firstName, lastName, postalCode);\ncheckoutPage.clickContinue();\n// Verify overview page\ncheckoutPage.verifyInCheckoutOverview();\n// Finish checkout\ncheckoutPage.clickFinish();\n// Validasi: checkout berhasil\ncheckoutPage.verifyCheckoutComplete();",
+              "err": {
+                "message": "CypressError: `cy.task('writeAllureResults')` failed with the following error:\n\nThe 'task' event has not been registered in the setupNodeEvents method. You must register it before using cy.task()\n\nFix this in your setupNodeEvents method here:\nD:\\BeriJalan\\QC\\automation\\cypress.config.js\n\nhttps://on.cypress.io/api/task\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.task('writeAllureResults')` failed with the following error:\n\nThe 'task' event has not been registered in the setupNodeEvents method. You must register it before using cy.task()\n\nFix this in your setupNodeEvents method here:\nD:\\BeriJalan\\QC\\automation\\cypress.config.js\n\nhttps://on.cypress.io/api/task\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.\n    at <unknown> (https://saucedemo.com/__cypress/runner/cypress_runner.js:138702:72)\n    at tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at invokeResultsWriter (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:90:0)\n    at Context.eval (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:436:0)\n    at getRet (https://saucedemo.com/__cypress/runner/cypress_runner.js:122806:20)\n    at tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://saucedemo.com/__cypress/runner/cypress_runner.js:122817:66)\n    at Context.then (https://saucedemo.com/__cypress/runner/cypress_runner.js:123068:21)\n    at wrapped (https://saucedemo.com/__cypress/runner/cypress_runner.js:146326:19)",
+                "diff": null
+              },
+              "uuid": "cd36d67a-15e4-4254-8c42-9042030c5681",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Gagal checkout tanpa mengisi semua field (kosong)",
+              "fullTitle": "Data Driven Testing - Checkout Product TC02 - Gagal checkout tanpa mengisi semua field (kosong)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Klik continue tanpa mengisi form\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"First Name is required\");",
+              "err": {},
+              "uuid": "ad5335ce-4726-4aee-bba6-d0833510e5f2",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "TC03 - Gagal checkout tanpa mengisi First Name",
+              "fullTitle": "Data Driven Testing - Checkout Product TC03 - Gagal checkout tanpa mengisi First Name",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  lastName,\n  postalCode\n} = checkoutData.missingFirstName;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa first name\ncheckoutPage.fillCheckoutForm(null, lastName, postalCode);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"First Name is required\");",
+              "err": {},
+              "uuid": "3149699b-730e-4f61-b442-1d0fefff0001",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "TC04 - Gagal checkout tanpa mengisi Last Name",
+              "fullTitle": "Data Driven Testing - Checkout Product TC04 - Gagal checkout tanpa mengisi Last Name",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  postalCode\n} = checkoutData.missingLastName;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa last name\ncheckoutPage.fillCheckoutForm(firstName, null, postalCode);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"Last Name is required\");",
+              "err": {},
+              "uuid": "5d01052e-7c60-4b29-a70d-30ff161ecefc",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "TC05 - Gagal checkout tanpa mengisi Postal Code",
+              "fullTitle": "Data Driven Testing - Checkout Product TC05 - Gagal checkout tanpa mengisi Postal Code",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  lastName\n} = checkoutData.missingPostalCode;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa postal code\ncheckoutPage.fillCheckoutForm(firstName, lastName, null);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"Postal Code is required\");",
+              "err": {},
+              "uuid": "6b2cccca-32bd-4c6a-8e08-d4f5e370cabd",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cd36d67a-15e4-4254-8c42-9042030c5681"
+          ],
+          "pending": [],
+          "skipped": [
+            "ad5335ce-4726-4aee-bba6-d0833510e5f2",
+            "3149699b-730e-4f61-b442-1d0fefff0001",
+            "5d01052e-7c60-4b29-a70d-30ff161ecefc",
+            "6b2cccca-32bd-4c6a-8e08-d4f5e370cabd"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

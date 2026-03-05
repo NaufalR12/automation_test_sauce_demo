@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T03:01:27.991Z",
+    "end": "2026-03-04T03:01:28.462Z",
+    "duration": 471,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8a85607f-ef4f-495d-911a-8cbf2abcc9ea",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginPage.cy.js",
+      "file": "cypress\\e2e\\loginPage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2eceb25f-4c96-4dac-a080-31bb2bc3a207",
+          "title": "Page Object Model - Login Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Berhasil login dengan kredensial valid",
+              "fullTitle": "Page Object Model - Login Page TC01 - Berhasil login dengan kredensial valid",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// it() → Mendefinisikan 1 test case individual\n// Parameter 1: Nama test case\n// Parameter 2: Callback berisi langkah-langkah test\nconst {\n  user_name,\n  password\n} = loginData.validLogin;\n// Destructuring → Mengambil user_name dan password dari object loginData.validLogin\n// Contoh: { user_name: \"standard_user\", password: \"secret_sauce\" }\nloginPage.visit();\n// Memanggil method visit() dari LoginPage → membuka halaman login\nloginPage.login(user_name, password);\n// Memanggil method login() → mengisi username, password, lalu klik tombol login\nloginPage.verifyLoginSuccess();\n// Memanggil method verifyLoginSuccess() → memverifikasi bahwa login berhasil\n// Biasanya cek URL atau elemen yang muncul setelah login",
+              "err": {
+                "message": "CypressError: `cy.task('writeAllureResults')` failed with the following error:\n\nThe 'task' event has not been registered in the setupNodeEvents method. You must register it before using cy.task()\n\nFix this in your setupNodeEvents method here:\nD:\\BeriJalan\\QC\\automation\\cypress.config.js\n\nhttps://on.cypress.io/api/task\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.",
+                "estack": "CypressError: `cy.task('writeAllureResults')` failed with the following error:\n\nThe 'task' event has not been registered in the setupNodeEvents method. You must register it before using cy.task()\n\nFix this in your setupNodeEvents method here:\nD:\\BeriJalan\\QC\\automation\\cypress.config.js\n\nhttps://on.cypress.io/api/task\n\nBecause this error occurred during a `after all` hook we are skipping all of the remaining tests.\n    at <unknown> (https://saucedemo.com/__cypress/runner/cypress_runner.js:138702:72)\n    at tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at invokeResultsWriter (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:90:0)\n    at Context.eval (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:436:0)\n    at getRet (https://saucedemo.com/__cypress/runner/cypress_runner.js:122806:20)\n    at tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://saucedemo.com/__cypress/runner/cypress_runner.js:122817:66)\n    at Context.then (https://saucedemo.com/__cypress/runner/cypress_runner.js:123068:21)\n    at wrapped (https://saucedemo.com/__cypress/runner/cypress_runner.js:146326:19)",
+                "diff": null
+              },
+              "uuid": "bf8d4b77-c184-45ad-988b-0b1cd92a4728",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Gagal login dengan kredensial tidak valid",
+              "fullTitle": "Page Object Model - Login Page TC02 - Gagal login dengan kredensial tidak valid",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  user_name,\n  password\n} = loginData.invalidLogin;\n// Mengambil kredensial yang salah dari loginData.invalidLogin\nloginPage.visit();\nloginPage.login(user_name, password);\nloginPage.verifyLoginFailed();\n// Memverifikasi bahwa login GAGAL\n// Biasanya cek apakah muncul error message",
+              "err": {},
+              "uuid": "676b15d1-4916-498a-a271-4a54b765c96a",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bf8d4b77-c184-45ad-988b-0b1cd92a4728"
+          ],
+          "pending": [],
+          "skipped": [
+            "676b15d1-4916-498a-a271-4a54b765c96a"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

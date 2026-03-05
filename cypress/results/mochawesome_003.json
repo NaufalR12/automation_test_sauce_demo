@@ -1,0 +1,90 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-03-04T02:56:44.257Z",
+    "end": "2026-03-04T02:56:44.498Z",
+    "duration": 241,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2deeca3a-9344-406a-9cd9-3054cf5d0db6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 206,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > `Cypress.env()` does not work when `allowCypressEnv` is set to `false`. Please migrate to `cy.env()` or leverage other stateful methods to manage variables. The variable being accessed was: `allure`\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cypress-env-migration",
+            "estack": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > `Cypress.env()` does not work when `allowCypressEnv` is set to `false`. Please migrate to `cy.env()` or leverage other stateful methods to manage variables. The variable being accessed was: `allure`\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cypress-env-migration\n    at cypressErr (https://saucedemo.com/__cypress/runner/cypress_runner.js:78375:18)\n    at Object.errByPath (https://saucedemo.com/__cypress/runner/cypress_runner.js:78443:10)\n    at failCypressEnvWithWarning (https://saucedemo.com/__cypress/runner/cypress_runner.js:41589:81)\n    at Object.allureEnabled (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:53:0)\n    at ./node_modules/@shelex/cypress-allure-plugin/reporter/index.js (webpack:///./node_modules/@shelex/cypress-allure-plugin/reporter/index.js:325:0)\n    at __webpack_require__ (webpack:///webpack/bootstrap:19:0)\n    at eval (webpack:///./cypress/support/e2e.js:18:0)\n    at eval (https://saucedemo.com/__cypress/tests?p=cypress\\support\\e2e.js:14160:3)\n    at eval (https://saucedemo.com/__cypress/tests?p=cypress\\support\\e2e.js:14162:12)\n    at eval (<anonymous>)\n    at <unknown> (https://saucedemo.com/__cypress/runner/cypress_runner.js:114035:23)\n    at tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://saucedemo.com/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://saucedemo.com/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://saucedemo.com/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://saucedemo.com/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)",
+            "diff": null
+          },
+          "uuid": "722d8635-f740-4955-90e9-273acfea3570",
+          "parentUUID": "2deeca3a-9344-406a-9cd9-3054cf5d0db6",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "722d8635-f740-4955-90e9-273acfea3570"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 206,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

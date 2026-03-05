@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T03:27:29.420Z",
+    "end": "2026-03-04T03:27:47.903Z",
+    "duration": 18483,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ab709f0c-3616-4ba6-a447-9a8284978d38",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkout.cy.js",
+      "file": "cypress\\e2e\\checkout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+          "title": "Data Driven Testing - Checkout Product",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Berhasil checkout dengan data valid lengkap",
+              "fullTitle": "Data Driven Testing - Checkout Product TC01 - Berhasil checkout dengan data valid lengkap",
+              "timedOut": null,
+              "duration": 4505,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  lastName,\n  postalCode\n} = checkoutData.validCheckout;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form\ncheckoutPage.fillCheckoutForm(firstName, lastName, postalCode);\ncheckoutPage.clickContinue();\n// Verify overview page\ncheckoutPage.verifyInCheckoutOverview();\n// Finish checkout\ncheckoutPage.clickFinish();\n// Validasi: checkout berhasil\ncheckoutPage.verifyCheckoutComplete();",
+              "err": {},
+              "uuid": "149a33e3-8a06-45ff-a1ac-01a1240c36c5",
+              "parentUUID": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Gagal checkout tanpa mengisi semua field (kosong)",
+              "fullTitle": "Data Driven Testing - Checkout Product TC02 - Gagal checkout tanpa mengisi semua field (kosong)",
+              "timedOut": null,
+              "duration": 2746,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Klik continue tanpa mengisi form\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"First Name is required\");",
+              "err": {},
+              "uuid": "db49ab2e-da3f-4641-ab37-cc1d8147f4bf",
+              "parentUUID": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC03 - Gagal checkout tanpa mengisi First Name",
+              "fullTitle": "Data Driven Testing - Checkout Product TC03 - Gagal checkout tanpa mengisi First Name",
+              "timedOut": null,
+              "duration": 3148,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  lastName,\n  postalCode\n} = checkoutData.missingFirstName;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa first name\ncheckoutPage.fillCheckoutForm(null, lastName, postalCode);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"First Name is required\");",
+              "err": {},
+              "uuid": "dd0e5ffd-4efe-440f-ac1b-6f24a8136825",
+              "parentUUID": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC04 - Gagal checkout tanpa mengisi Last Name",
+              "fullTitle": "Data Driven Testing - Checkout Product TC04 - Gagal checkout tanpa mengisi Last Name",
+              "timedOut": null,
+              "duration": 3216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  postalCode\n} = checkoutData.missingLastName;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa last name\ncheckoutPage.fillCheckoutForm(firstName, null, postalCode);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"Last Name is required\");",
+              "err": {},
+              "uuid": "f0b0ce5e-6580-4187-b0ee-c2ae501ccd3a",
+              "parentUUID": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC05 - Gagal checkout tanpa mengisi Postal Code",
+              "fullTitle": "Data Driven Testing - Checkout Product TC05 - Gagal checkout tanpa mengisi Postal Code",
+              "timedOut": null,
+              "duration": 3086,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  firstName,\n  lastName\n} = checkoutData.missingPostalCode;\n// Add product to cart\ncheckoutPage.addProductToCart();\ncheckoutPage.verifyCartBadge(1);\n// Go to cart\ncheckoutPage.goToCart();\ncheckoutPage.verifyInCartPage();\n// Click checkout\ncheckoutPage.clickCheckout();\ncheckoutPage.verifyInCheckoutPage();\n// Fill checkout form tanpa postal code\ncheckoutPage.fillCheckoutForm(firstName, lastName, null);\ncheckoutPage.clickContinue();\n// Validasi: tetap di halaman checkout & muncul error\ncheckoutPage.verifyInCheckoutPage();\ncheckoutPage.verifyErrorMessageContains(\"Postal Code is required\");",
+              "err": {},
+              "uuid": "4c980131-e271-4af6-b65b-9492b2c3579c",
+              "parentUUID": "54681e49-9e77-48e8-804d-8d08c1b8feec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "149a33e3-8a06-45ff-a1ac-01a1240c36c5",
+            "db49ab2e-da3f-4641-ab37-cc1d8147f4bf",
+            "dd0e5ffd-4efe-440f-ac1b-6f24a8136825",
+            "f0b0ce5e-6580-4187-b0ee-c2ae501ccd3a",
+            "4c980131-e271-4af6-b65b-9492b2c3579c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16701,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

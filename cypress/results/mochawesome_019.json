@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T04:32:46.330Z",
+    "end": "2026-03-04T04:32:53.802Z",
+    "duration": 7472,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3aef1201-ad01-4ccd-9957-6a9dc30426ad",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginPage.cy.js",
+      "file": "cypress\\e2e\\loginPage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "680fbdb3-f2d3-4e1b-a292-4785032eba49",
+          "title": "Page Object Model - Login Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Berhasil login dengan kredensial valid",
+              "fullTitle": "Page Object Model - Login Page TC01 - Berhasil login dengan kredensial valid",
+              "timedOut": null,
+              "duration": 2482,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// it() → Mendefinisikan 1 test case individual\n// Parameter 1: Nama test case\n// Parameter 2: Callback berisi langkah-langkah test\nconst {\n  user_name,\n  password\n} = loginData.validLogin;\n// Destructuring → Mengambil user_name dan password dari object loginData.validLogin\n// Contoh: { user_name: \"standard_user\", password: \"secret_sauce\" }\nloginPage.visit();\n// Memanggil method visit() dari LoginPage → membuka halaman login\nloginPage.login(user_name, password);\n// Memanggil method login() → mengisi username, password, lalu klik tombol login\nloginPage.verifyLoginSuccess();\n// Memanggil method verifyLoginSuccess() → memverifikasi bahwa login berhasil\n// Biasanya cek URL atau elemen yang muncul setelah login",
+              "err": {},
+              "uuid": "1d3fc7a5-b3d4-44ab-8db7-74efa2458c8f",
+              "parentUUID": "680fbdb3-f2d3-4e1b-a292-4785032eba49",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Gagal login dengan kredensial tidak valid",
+              "fullTitle": "Page Object Model - Login Page TC02 - Gagal login dengan kredensial tidak valid",
+              "timedOut": null,
+              "duration": 1648,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  user_name,\n  password\n} = loginData.invalidLogin;\n// Mengambil kredensial yang salah dari loginData.invalidLogin\nloginPage.visit();\nloginPage.login(user_name, password);\nloginPage.verifyLoginFailed();\n// Memverifikasi bahwa login GAGAL\n// Biasanya cek apakah muncul error message",
+              "err": {},
+              "uuid": "c8f57b10-bf5f-40fc-ad20-0b628fa03889",
+              "parentUUID": "680fbdb3-f2d3-4e1b-a292-4785032eba49",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1d3fc7a5-b3d4-44ab-8db7-74efa2458c8f",
+            "c8f57b10-bf5f-40fc-ad20-0b628fa03889"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4130,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
