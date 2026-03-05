@@ -21,4 +21,4 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
   },
 });
-
+// test triggernya jalan apa nggak
