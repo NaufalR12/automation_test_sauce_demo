@@ -59,9 +59,7 @@ pipeline {
 
         stage('Archive Artifacts') {
             steps {
-                archiveArtifacts artifacts: 'cypress/videos/**, 
-                cypress/screenshots/**', 
-                allowEmptyArchive: true
+                archiveArtifacts artifacts: 'cypress/videos/**, cypress/screenshots/**', allowEmptyArchive: true
             }
         }
     }
